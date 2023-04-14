@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         'jost': ['Jost', 'sans-serif']
       },
+      screens: {
+        '3xl': '2160px',
+      },
     },
   },
   plugins: [],
