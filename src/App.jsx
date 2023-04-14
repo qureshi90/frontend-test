@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from "react";
 import Logo from "./Logo";
 import shoppingBag from "./assets/shopping-bag.svg";
 import burgerMenu from "./assets/burger-menu.svg";
@@ -12,6 +13,8 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function App() {
+  const [dropDown, setDropDown] = useState(false);
+
   return (
     <>
       <div className="w-full h-[4.5rem] 2xl:h-20 3xl:h-28 px-10 lg:px-36 flex justify-between items-center">
@@ -39,8 +42,17 @@ function App() {
           <img
             src={burgerMenu}
             alt="burger-menu"
+            onClick={() => setDropDown(!dropDown)}
             className="h-8 w-8 ml-8 block lg:hidden"
           />
+          {dropDown && (
+            <div className="block lg:hidden px-5 py-3 absolute top-14 right-10 bg-[#F0F0F0] rounded-md shadow-lg text-sm">
+              <p>HOME</p>
+              <p>ABOUT</p>
+              <p>CONTACT</p>
+              <p>BLOG</p>
+            </div>
+          )}
         </div>
       </div>
 
