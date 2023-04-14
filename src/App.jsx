@@ -1,13 +1,15 @@
 import "./App.css";
 import Logo from "./Logo";
 import shoppingBag from "./assets/shopping-bag.svg";
-import burgerMenu from "./assets/burger-menu.svg"
+import burgerMenu from "./assets/burger-menu.svg";
 import leftImage from "./assets/pexels-photo-4173140.jpeg";
 import rightImage from "./assets/pexels-photo-5560290.jpeg";
 import firstImage from "./assets/pexels-photo-10767063.jpeg";
 import secondImage from "./assets/pexels-photo-6141242.jpeg";
 import thirdImage from "./assets/pexels-photo-1906818.jpeg";
 import fourthImage from "./assets/pexels-photo-2181872.jpeg";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function App() {
   return (
@@ -34,7 +36,11 @@ function App() {
 
         <div className="flex">
           <img src={shoppingBag} alt="bag-logo" />
-          <img src={burgerMenu} alt="burger-menu" className="h-8 w-8 ml-8 block lg:hidden" />
+          <img
+            src={burgerMenu}
+            alt="burger-menu"
+            className="h-8 w-8 ml-8 block lg:hidden"
+          />
         </div>
       </div>
 
@@ -56,19 +62,66 @@ function App() {
         </p>
 
         <div className="w-full lg:flex">
-          <img src={leftImage} className="w-full h-[345px] lg:w-1/2 lg:h-[455px] 2xl:h-[685px] 3xl:h-[815] mb-3 lg:mb-0 lg:mr-1 2xl:mr-2 3xl:mr-3 object-cover" />
-          <img src={rightImage} className="w-full h-[345px] lg:w-1/2 lg:h-[455px] 2xl:h-[685px] 3xl:h-[815] mb-3 lg:mb-0 lg:ml-1 2xl:ml-2 3xl:ml-3 object-cover" />
+          <img
+            src={leftImage}
+            className="w-full h-[345px] lg:w-1/2 lg:h-[455px] 2xl:h-[685px] 3xl:h-[815] mb-3 lg:mb-0 lg:mr-1 2xl:mr-2 3xl:mr-3 object-cover"
+          />
+          <img
+            src={rightImage}
+            className="w-full h-[345px] lg:w-1/2 lg:h-[455px] 2xl:h-[685px] 3xl:h-[815] mb-3 lg:mb-0 lg:ml-1 2xl:ml-2 3xl:ml-3 object-cover"
+          />
         </div>
 
         <p className="mt-16 mb-6 font-jost text-xl lg:text-2xl text-center">
           THIS IS THE COLLECTION
         </p>
 
-        <div className="w-full flex">
-          <img src={firstImage} className="w-1/4 h-[300px] mr-1 object-cover" />
-          <img src={secondImage} className="w-1/4 h-[300px] mx-1 object-cover" />
-          <img src={thirdImage} className="w-1/4 h-[300px] mx-1 object-cover" />
-          <img src={fourthImage} className="w-1/4 h-[300px] ml-1 object-cover" />
+        <div className="hidden w-full lg:flex">
+          <img
+            src={firstImage}
+            className="w-[200px] h-[300px] md:w-1/4 2xl:h-[550px] 3xl:h-[800px] mr-1 object-cover"
+          />
+          <img
+            src={secondImage}
+            className="w-[200px] h-[300px] md:w-1/4 2xl:h-[550px] 3xl:h-[800px] mx-1 object-cover"
+          />
+          <img
+            src={thirdImage}
+            className="w-[200px] h-[300px] md:w-1/4 2xl:h-[550px] 3xl:h-[800px] mx-1 object-cover"
+          />
+          <img
+            src={fourthImage}
+            className="w-[200px] h-[300px] md:w-1/4 2xl:h-[550px] 3xl:h-[800px] ml-1 object-cover"
+          />
+        </div>
+
+        <div className="block lg:hidden w-full">
+          <Carousel
+            showStatus={false}
+            dynamicHeight={false}
+            swipeScrollTolerance={50}
+            centerSlidePercentage={30}
+            showThumbs={false}
+            useKeyboardArrows={true}
+            infiniteLoop
+          >
+            <img
+              src={firstImage}
+              className="w-[200px] h-[300px] md:w-1/4 2xl:h-[550px] 3xl:h-[800px] object-cover"
+            />
+            <img
+              src={secondImage}
+              className="w-[200px] h-[300px] md:w-1/4 2xl:h-[550px] 3xl:h-[800px] object-cover"
+            />
+            <img
+              src={thirdImage}
+              className="w-[200px] h-[300px] md:w-1/4 2xl:h-[550px] 3xl:h-[800px] object-cover"
+            />
+            <img
+              src={fourthImage}
+              className="w-[200px] h-[300px] md:w-1/4 2xl:h-[550px] 3xl:h-[800px] object-cover"
+            />
+          </Carousel>
         </div>
 
         <div className="flex justify-center">
