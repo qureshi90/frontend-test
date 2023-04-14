@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div className="w-full h-[4.5rem] 2xl:h-20 3xl:h-28 px-10 lg:px-36 flex justify-between items-center">
+      <div className="fixed w-full h-[4.5rem] bg-white 2xl:h-20 3xl:h-28 px-10 lg:px-36 flex justify-between items-center z-10">
         <div className="w-1/5">
           <Logo />
         </div>
@@ -56,8 +56,8 @@ function App() {
         </div>
       </div>
 
-      <div className="parallax min-h-[450px] 2xl:min-h-[700px] 3xl:min-h-[999px] flex flex-col justify-center items-center">
-        <p className="text-[50px] lg:text-[80px] 2xl:text-[100px] 3xl:text-[120px] leading-none text-white font-jost">
+      <div className="parallax min-h-[500px] 2xl:min-h-[800px] 3xl:min-h-[1100px] flex flex-col justify-center items-center">
+        <p className="mt-[4.5rem] 2xl:mt-20 3xl:mt-28 text-[50px] lg:text-[80px] 2xl:text-[100px] 3xl:text-[120px] leading-none text-white font-jost">
           I AM 120 PX
         </p>
         <p className="text-lg lg:text-2xl 2xl:text-3xl 3xl:text-4xl text-white font-jost">
